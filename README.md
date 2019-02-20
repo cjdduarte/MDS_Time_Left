@@ -4,7 +4,13 @@
 
 This addon shows extra information of the due cards and returns the expected time to finalize them.
 
-<img src="https://i.ibb.co/q9FhwhW/Screenshot-1.png" alt="Info">
+<b>Before:</b>
+
+<img src="https://i.ibb.co/483nVpz/before.png" alt="Statistic">
+
+<b>After:</b>
+
+<img src="https://i.ibb.co/XxYgsqc/after.png" alt="Statistic">
 
 
 Copyright(C)| Carlos Duarte
