@@ -2,7 +2,7 @@
 
 <b>About:</b>
 
-This addon shows extra information of the due cards and returns the expected time to finalize them.
+This addon shows extra information of the due cards and returns the expected time to finalize (Due+New).
 
 <b>Before:</b>
 
