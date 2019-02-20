@@ -6,11 +6,11 @@ This addon shows extra information of the due cards and returns the expected tim
 
 <b>Before:</b>
 
-<img src="https://i.ibb.co/483nVpz/before.png" alt="Statistic">
+<img src="https://i.ibb.co/C2yGtsn/before.png" alt="Before">
 
 <b>After:</b>
 
-<img src="https://i.ibb.co/XxYgsqc/after.png" alt="Statistic">
+<img src="https://i.ibb.co/QffdL8s/after.png" alt="After">
 
 
 Copyright(C)| Carlos Duarte
@@ -24,6 +24,9 @@ License | GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 Source in | https://github.com/cjdduarte/MDS_Time_Left
 
 <b> #### Change Log:</b>
+
+v1.1 - 2019-02-21
+- Color Correction and unified code
 
 v1.0 - 2019-02-20
 - Initial Release
