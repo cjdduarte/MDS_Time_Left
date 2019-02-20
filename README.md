@@ -4,8 +4,7 @@
 
 This addon shows extra information of the due cards and returns the expected time to finalize them.
 
-<img src="https://i.ibb.co/c60sYf3/statistic.jpg" alt="Info">
-
+<img src="https://i.ibb.co/q9FhwhW/Screenshot-1.png" alt="Info">
 
 
 Copyright(C)| Carlos Duarte
@@ -20,5 +19,5 @@ Source in | https://github.com/cjdduarte/MDS_Time_Left
 
 <b> #### Change Log:</b>
 
-v1.0 - 2018-12-03
+v1.0 - 2019-02-20
 - Initial Release
