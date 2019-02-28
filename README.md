@@ -25,8 +25,8 @@ Source in | https://github.com/cjdduarte/MDS_Time_Left
 
 <b> #### Change Log:</b>
 
-v1.1 - 2019-02-21
-- Color Correction and unified code
+v1.2 - 2019-02-27 - Indentation
 
-v1.0 - 2019-02-20
-- Initial Release
+v1.1 - 2019-02-21 - Color Correction and unified code
+
+v1.0 - 2019-02-20 - Initial Release
