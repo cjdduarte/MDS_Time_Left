@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
-#Copyright(C)| Carlos Duarte
-#Based 1 on    | Dmitry Mikheev code, in add-on "More decks overview stats"
-#Based 2 on    | calumkscode, in add-on https://github.com/calumks/anki-deck-stats
-#License       | GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
-#Source in     | https://github.com/cjdduarte/MDS_Time_Left
+#Copyright(C)	| Carlos Duarte
+#Based 1 on    	| Dmitry Mikheev code, in add-on "More decks overview stats"
+#Based 2 on    	| calumkscode, in add-on https://github.com/calumks/anki-deck-stats
+#License       	| GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
+#Source in     	| https://github.com/cjdduarte/MDS_Time_Left
 
 import anki
 import aqt
 
 def renderStats(self, _old):
-
     # Get due and new cards
     new = 0
     lrn = 0
@@ -26,10 +25,10 @@ def renderStats(self, _old):
             """select count(), sum(time)/1000 from revlog where id > ?""",
             (self.mw.col.sched.dayCutoff - 86400) * 1000)
 
-    cards = cards or 0
+    cards 	= cards or 0
     thetime = thetime or 0
 
-    speed = cards * 60 / max(1, thetime)
+    speed 	= cards * 60 / max(1, thetime)
     minutes = int(total / max(1, speed))
 
     buf = "<div style='display:table;padding-top:1.5em;'>" \
@@ -56,7 +55,6 @@ def renderStats(self, _old):
         + _("More") + "&nbsp;" + ngettext(
              "%s minute.", "%s minutes.", minutes) % (minutes) \
         + "</div></div>"
-
     return buf
 
 aqt.deckbrowser.DeckBrowser._renderStats = anki.hooks.wrap(

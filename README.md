@@ -17,7 +17,7 @@ Copyright(C)| Carlos Duarte
 
 Based on | Dmitry Mikheev code, in add-on "More decks overview stats"
 
-Based on | calumkscode, in add-on https://github.com/calumks/anki-deck-stats
+Based on | calumks code, in add-on https://github.com/calumks/anki-deck-stats
 
 License | GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 
