@@ -1,4 +1,4 @@
-<b>Bug Report:</b> https://github.com/cjdduarte/MDS_Time_Left
+<b>Bug Report:</b> https://github.com/cjdduarte/MDS_Time_Left/issues
 
 <b>About:</b>
 
@@ -24,6 +24,8 @@ License | GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 Source in | https://github.com/cjdduarte/MDS_Time_Left
 
 <b> #### Change Log:</b>
+
+v1.3 - 2019-02-27 - Easier to the user change the colors (tanks @renbosa)
 
 v1.2 - 2019-02-27 - Indentation
 
