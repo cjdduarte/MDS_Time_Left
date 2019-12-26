@@ -7,6 +7,29 @@
 
 import anki
 import aqt
+from aqt import mw
+from aqt.utils import tooltip
+
+#-------------Configuration------------------
+if getattr(getattr(mw, "addonManager", None), "getConfig", None): #Anki 2.1
+    config = mw.addonManager.getConfig(__name__)
+else:
+    # The default steps for "New" Anki cards are 1min and 10min meaning that you see New cards actually a minimum of *TWO* times that day
+    # You can now configure how many times new cards will be counted.
+    # CountTimesNew = 1
+    # Quantify '1' time the "new card" time | Example: Steps (10 1440)
+    # CountTimesNew = 2 (default)
+    # Quantify '2' times the "new card" time | Example: Steps (1 10)
+    # CountTimesNew = n
+    # Quantify 'n' times the "new card" time | Example: Steps (1 10 20 30 n)
+
+    #----- Modify here (Anki 2.0) ------
+    config = dict(CountTimesNew = 2)
+    #----- Modify here (Anki 2.0) ------
+
+CountTimesNew = config['CountTimesNew']
+#-------------Configuration------------------
+
 
 def renderStats(self, _old):
     # Get due and new cards
@@ -18,7 +41,10 @@ def renderStats(self, _old):
         new += tree[4]
         lrn += tree[3]
         due += tree[2]
-    total = new + lrn + due
+
+    #if CountTimesNew == 0: CountTimesNew = 2
+    total = (CountTimesNew*new) + lrn + due
+    #total = new + lrn + due
 
     # Get studdied cards
     cards, thetime = self.mw.col.db.first(
