@@ -1,6 +1,7 @@
 <b>Bug Report:</b> https://github.com/cjdduarte/MDS_Time_Left/issues
 
 <b>#### New Change:</b>
+
 <b>+ Change the number colors in the configuration options</b>
 
 <b>About:</b>
@@ -21,17 +22,23 @@ The default steps for "New" Anki cards are 1min and 10min meaning that you see N
 You can now configure how many times new cards will be counted.
 
 <b>CountTimesNew [number]:</b>
+
 CountTimesNew = 1 (old version)
+
 Quantify '1' time the "new card" time | Example: Steps (10 1440)
 
 CountTimesNew = 2 (default)
+
 Quantify '2' times the "new card" time | Example: Steps (1 10)
 
 CountTimesNew = n
+
 Quantify 'n' times the "new card" time | Example: Steps (1 10 10 20 30...)
 
 <b>Number colors [Name]:</b>
+
 <a href="https://www.w3schools.com/colors/colors_groups.asp">Color Names Sorted by Color Groups</a>
+
 All modern browsers support the following 140 color names (click on a color name, or a hex value, to view the color as the background-color along with different text colors):
 
 Copyright(C)| Carlos Duarte
