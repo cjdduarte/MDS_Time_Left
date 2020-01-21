@@ -12,4 +12,8 @@ Quantify '2' times the "new card" time<br/>
 Example: Steps (1 10)<br/><br/>
 "CountTimesNew" = n<br/>
 Quantify 'n' times the "new card" time<br/>
-Example: Steps (1 10 20 30 n)<br/>
+Example: Steps (1 10 10 20 30...)<br/>
+
+###Number colors [Name]
+[Color Names Sorted by Color Groups](https://www.w3schools.com/colors/colors_groups.asp)<br/>
+All modern browsers support the following 140 color names (click on a color name, or a hex value, to view the color as the background-color along with different text colors):

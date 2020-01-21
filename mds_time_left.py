@@ -16,15 +16,15 @@ if getattr(getattr(mw, "addonManager", None), "getConfig", None): #Anki 2.1
 else:
     # The default steps for "New" Anki cards are 1min and 10min meaning that you see New cards actually a minimum of *TWO* times that day
     # You can now configure how many times new cards will be counted.
-    # CountTimesNew = 1
+    # CountTimesNew = 1 (old version)
     # Quantify '1' time the "new card" time | Example: Steps (10 1440)
     # CountTimesNew = 2 (default)
     # Quantify '2' times the "new card" time | Example: Steps (1 10)
     # CountTimesNew = n
-    # Quantify 'n' times the "new card" time | Example: Steps (1 10 20 30 n)
+    # Quantify 'n' times the "new card" time | Example: Steps (1 10 10 20 30...)
 
     #----- Modify here (Anki 2.0) ------
-    config = dict(CountTimesNew = 2)
+    config = dict(CountTimesNew = 2, NewColor = 'DarkBlue', ReviewColor = 'DarkRed', LearnColor = 'DarkRed', TotalDueColor = 'ForestGreen', TotalColor = 'Grey')
     #----- Modify here (Anki 2.0) ------
 
 CountTimesNew = config['CountTimesNew']
@@ -57,18 +57,18 @@ def renderStats(self, _old):
     speed   = cards * 60 / max(1, thetime)
     minutes = int(total / max(1, speed))
 
-    newcolor        = '#0000aa'
-    reviewcolor     = '#aa0000'
-    learncolor      = '#aa0000'
-    totalduecolor   = '#00aa00'
-    totalcolor      = '#888888'
+    NewColor        = config['NewColor']
+    ReviewColor     = config['ReviewColor']
+    LearnColor      = config['LearnColor']
+    TotalDueColor   = config['TotalDueColor']
+    TotalColor      = config['TotalColor']
 
     insert_style = "<style type=\"text/css\">" \
-        + ".new-color { color:"         + newcolor + ";}" \
-        + ".review-color { color:"      + reviewcolor + ";}" \
-        + ".learn-color { color:"       + learncolor + ";}" \
-        + ".totaldue-color { color:"    + totalduecolor + ";}" \
-        + ".total-color { color:"       + totalcolor + ";}" \
+        + ".new-color { color:"         + NewColor + ";}" \
+        + ".review-color { color:"      + ReviewColor + ";}" \
+        + ".learn-color { color:"       + LearnColor + ";}" \
+        + ".totaldue-color { color:"    + TotalDueColor + ";}" \
+        + ".total-color { color:"       + TotalColor + ";}" \
         + "</style>"
 
     buf = insert_style \
