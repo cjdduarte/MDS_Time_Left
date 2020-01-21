@@ -1,8 +1,8 @@
 {
 	"CountTimesNew": 2,
-	"NewColor": "DarkBlue",
-	"ReviewColor": "DarkRed",
-	"LearnColor": "DarkRed",
-	"TotalDueColor": "ForestGreen",
+	"NewColor": "Blue",
+	"ReviewColor": "Red",
+	"LearnColor": "Red",
+	"TotalDueColor": "LimeGreen",
 	"TotalColor": "Grey"
 }

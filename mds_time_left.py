@@ -44,6 +44,7 @@ def renderStats(self, _old):
 
     #if CountTimesNew == 0: CountTimesNew = 2
     total = (CountTimesNew*new) + lrn + due
+    totalDisplay = new + lrn + due
     #total = new + lrn + due
 
     # Get studdied cards
@@ -86,7 +87,7 @@ def renderStats(self, _old):
         + ": &nbsp; <b class='totaldue-color'>%(c)s</b> " % dict(c=(lrn+due)) \
         + "</span> " \
         + " &nbsp; <span style='white-space:nowrap;'>" + _("Total") \
-        + ": &nbsp; <b class='total-color'>%(c)s</b>" % dict(c=(total)) \
+        + ": &nbsp; <b class='total-color'>%(c)s</b>" % dict(c=(totalDisplay)) \
         + "</span></div>" \
         + "<div style='display:table-cell;vertical-align:middle;" \
         + "padding-left:2em;'>" \

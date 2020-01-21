@@ -4,7 +4,7 @@
 
 <b>+ Change the number colors in the configuration options</b>
 
-<b>About:</b>
+<b>#### About:</b>
 
 This addon shows extra information of the due cards and returns the expected time to finalize (Due+New).
 
@@ -16,7 +16,7 @@ This addon shows extra information of the due cards and returns the expected tim
 
 <img src="https://i.ibb.co/QffdL8s/after.png" alt="After">
 
-<b>New configuration option:</b>
+<b>#### Configuration option:</b>
 
 The default steps for "New" Anki cards are 1min and 10min meaning that you see New cards actually a minimum of <b>TWO</b> times that day.
 You can now configure how many times new cards will be counted.
