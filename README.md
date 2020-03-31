@@ -53,6 +53,8 @@ Source in | https://github.com/cjdduarte/MDS_Time_Left
 
 <b> #### Change Log:</b>
 
+v1.6 - 2020-03-31 + Adjust Grammar and translation.
+
 v1.5 - 2020-01-21 + Change the number colors in the configuration options.
 
 v1.4 - 2019-12-26 + New configuration option (tanks @MedAnki)

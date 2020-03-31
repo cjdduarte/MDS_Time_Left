@@ -6,6 +6,7 @@
 #Source in      | https://github.com/cjdduarte/MDS_Time_Left
 
 import anki
+from anki.lang import _, ngettext
 import aqt
 from aqt import mw
 from aqt.utils import tooltip
@@ -92,12 +93,13 @@ def renderStats(self, _old):
         + "<div style='display:table-cell;vertical-align:middle;" \
         + "padding-left:2em;'>" \
         + "<span style='white-space:nowrap;'>" + _("Average") \
-        + ":<br> " + _("%.01f cards/minute") % (speed) \
+        + ":<br> " + _("%.01f") % (speed) + "&nbsp;" + (_("Cards") + "/" + _("Minutes").replace("s", "")).lower()  \
         + "</span><br><br>" \
-        + _("More") + "&nbsp;" + ngettext(
-             "%s minute.", "%s minutes.", minutes) % (minutes) \
+        + str(ngettext("%s minute.", "%s minutes.", minutes) % (minutes)).replace(".", "") + "&nbsp;" + _("More").lower() \
         + "</div></div>"
     return buf
+        #+ ":<br> " + _("%.01f cards/minute") % (speed) \
+        #+ _("More") + "&nbsp;" + ngettext("%s minute.", "%s minutes.", minutes) % (minutes) \
 
 aqt.deckbrowser.DeckBrowser._renderStats = anki.hooks.wrap(
     aqt.deckbrowser.DeckBrowser._renderStats, renderStats, 'around')
