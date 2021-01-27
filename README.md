@@ -2,7 +2,7 @@
 
 <b>#### New Change:</b>
 
-<b>+ Change the number colors in the configuration options</b>
+<b>+ Clean code (removed compatibility with Anki 2.0)</b>
 
 <b>#### About:</b>
 
@@ -31,9 +31,9 @@ CountTimesNew = 2 (default)
 
 Quantify '2' times the "new card" time | Example: Steps (1 10)
 
-CountTimesNew = n
+CountTimesNew = n (replace "n" with the number of rotations of the same day)
 
-Quantify 'n' times the "new card" time | Example: Steps (1 10 10 20 30...)
+Quantify 'n' times the "new card" time | Example: Steps (1 10 10 20 30...) => n=5
 
 <b>Number colors [Name]:</b>
 
@@ -52,6 +52,8 @@ License | GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 Source in | https://github.com/cjdduarte/MDS_Time_Left
 
 <b> #### Change Log:</b>
+
+v1.7 - 2021-01-27 + Clean code (removed compatibility with Anki 2.0).
 
 v1.6 - 2020-03-31 + Adjust Grammar and translation.
 
