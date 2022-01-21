@@ -10,6 +10,7 @@ from anki.lang import _, ngettext
 import aqt
 from aqt import mw
 from aqt.utils import tooltip
+import math
 
 #-------------Configuration------------------
 config = mw.addonManager.getConfig(__name__)
@@ -35,18 +36,25 @@ def renderStats(self, _old):
         lrn += tree[3]
         due += tree[2]
 
-    #if CountTimesNew == 0: CountTimesNew = 2
-    total = (CountTimesNew*new) + lrn + due
-    totalDisplay = new + lrn + due
-    #total = new + lrn + due
-
     # Get studdied cards
-    cards, thetime = self.mw.col.db.first(
-            """select count(), sum(time)/1000 from revlog where id > ?""",
+    cards, thetime, failed = self.mw.col.db.first(
+    """
+    select count(), sum(time)/1000,
+    sum(case when ease = 1 then 1 else 0 end)
+    from revlog where id > ? """,
             (self.mw.col.sched.dayCutoff - 86400) * 1000)
 
     cards   = cards or 0
     thetime = thetime or 0
+    failed = failed or 0
+    if cards:
+        AgainRatio = failed / float(cards)
+    else: AgainRatio = 0
+
+    #if CountTimesNew == 0: CountTimesNew = 2
+    total = (CountTimesNew*new) + lrn + math.ceil(due * (1 + AgainRatio))
+    totalDisplay = new + lrn + due
+    #total = new + lrn + due
 
     speed   = cards * 60 / max(1, thetime)
     minutes = int(total / max(1, speed))
@@ -90,8 +98,8 @@ def renderStats(self, _old):
         + str(ngettext("%s minute.", "%s minutes.", minutes) % (minutes)).replace(".", "") + "&nbsp;" + _("More").lower() \
         + "</div></div>"
     return buf
-        #+ ":<br> " + _("%.01f cards/minute") % (speed) \
-        #+ _("More") + "&nbsp;" + ngettext("%s minute.", "%s minutes.", minutes) % (minutes) \
+    #+ ":<br> " + _("%.01f cards/minute") % (speed) \
+    #+ _("More") + "&nbsp;" + ngettext("%s minute.", "%s minutes.", minutes) % (minutes) \
 
 aqt.deckbrowser.DeckBrowser._renderStats = anki.hooks.wrap(
     aqt.deckbrowser.DeckBrowser._renderStats, renderStats, 'around')
