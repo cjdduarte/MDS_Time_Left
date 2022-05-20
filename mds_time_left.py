@@ -8,7 +8,7 @@
 import anki
 from anki.lang import _, ngettext
 import aqt
-from aqt import mw
+from aqt import mw, theme
 from aqt.utils import tooltip
 
 #-------------Configuration------------------
@@ -51,11 +51,18 @@ def renderStats(self, _old):
     speed   = cards * 60 / max(1, thetime)
     minutes = int(total / max(1, speed))
 
-    NewColor        = config['NewColor']
-    ReviewColor     = config['ReviewColor']
-    LearnColor      = config['LearnColor']
-    TotalDueColor   = config['TotalDueColor']
-    TotalColor      = config['TotalColor']
+    if theme.theme_manager.night_mode:
+        NewColor        = config['NewColorDark']
+        ReviewColor     = config['ReviewColorDark']
+        LearnColor      = config['LearnColorDark']
+        TotalDueColor   = config['TotalDueColorDark']
+        TotalColor      = config['TotalColorDark']
+    else:
+        NewColor        = config['NewColorLight']
+        ReviewColor     = config['ReviewColorLight']
+        LearnColor      = config['LearnColorLight']
+        TotalDueColor   = config['TotalDueColorLight']
+        TotalColor      = config['TotalColorLight']
 
     insert_style = "<style type=\"text/css\">" \
         + ".new-color { color:"         + NewColor + ";}" \

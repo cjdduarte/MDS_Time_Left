@@ -2,7 +2,7 @@
 
 <b>#### New Change:</b>
 
-<b>+ Clean code (removed compatibility with Anki 2.0)</b>
+<b>+ Night mode compatibility</b>
 
 <b>#### About:</b>
 
@@ -52,6 +52,8 @@ License | GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 Source in | https://github.com/cjdduarte/MDS_Time_Left
 
 <b> #### Change Log:</b>
+
+v1.8 - 2022-05-20 + Night mode compatibility.
 
 v1.7 - 2021-01-27 + Clean code (removed compatibility with Anki 2.0).
 
