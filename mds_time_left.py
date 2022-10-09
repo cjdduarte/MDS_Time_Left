@@ -10,6 +10,7 @@ from anki.lang import _, ngettext
 import aqt
 from aqt import mw, theme
 from aqt.utils import tooltip
+from anki import version as anki_version
 
 #-------------Configuration------------------
 config = mw.addonManager.getConfig(__name__)
@@ -41,9 +42,11 @@ def renderStats(self, _old):
     #total = new + lrn + due
 
     # Get studdied cards
-    cards, thetime = self.mw.col.db.first(
-            """select count(), sum(time)/1000 from revlog where id > ?""",
-            (self.mw.col.sched.day_cutoff - 86400) * 1000)
+    anki_point_version = int(anki_version.split(".")[2])
+    if anki_point_version > 49:
+        cards, thetime = self.mw.col.db.first("""select count(), sum(time)/1000 from revlog where id > ?""", (self.mw.col.sched.day_cutoff - 86400) * 1000)
+    else:
+        cards, thetime = self.mw.col.db.first("""select count(), sum(time)/1000 from revlog where id > ?""", (self.mw.col.sched.dayCutoff - 86400) * 1000)
 
     cards   = cards or 0
     thetime = thetime or 0
