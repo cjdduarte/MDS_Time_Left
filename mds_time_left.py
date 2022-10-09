@@ -43,7 +43,7 @@ def renderStats(self, _old):
     # Get studdied cards
     cards, thetime = self.mw.col.db.first(
             """select count(), sum(time)/1000 from revlog where id > ?""",
-            (self.mw.col.sched.dayCutoff - 86400) * 1000)
+            (self.mw.col.sched.day_cutoff - 86400) * 1000)
 
     cards   = cards or 0
     thetime = thetime or 0
