@@ -2,7 +2,7 @@
 
 <b>#### New Change:</b>
 
-<b>+ New code (Clean)</b>
+<b>+ Fully translated</b>
 
 <b>#### About:</b>
 
@@ -52,6 +52,8 @@ License | GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
 Source in | https://github.com/cjdduarte/MDS_Time_Left
 
 <b> #### Change Log:</b>
+
+v2.1 - 2023-08-17 + Fully translated
 
 v2.0 - 2023-08-15 + New code (Clean)
 

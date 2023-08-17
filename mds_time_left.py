@@ -6,11 +6,12 @@
 # Source in      | https://github.com/cjdduarte/MDS_Time_Left
 
 import anki
-from anki.lang import _, ngettext
+# from anki.lang import _, ngettext
 import aqt
 from aqt import mw, theme
 from aqt.utils import tooltip
 from anki import version as anki_version
+from aqt.utils import tr
 
 #-------------Configuration------------------
 config = mw.addonManager.getConfig(__name__)
@@ -35,6 +36,15 @@ def generate_style():
     return "<style type=\"text/css\">" + ' '.join(style_elements) + "</style>"
 
 def renderStats(self, _old):
+
+    txtNew      = tr.statistics_counts_new_cards()
+    txtLrn      = tr.card_stats_review_log_type_learn()
+    txtDue      = tr.card_stats_review_count()
+    txtLrnDue   = tr.statistics_due_count()
+    txtTotal    = tr.statistics_total()
+    txtAverage  = tr.statistics_average()
+    txtMore     = tr.studying_more().lower()
+
     # Get due and new cards
     new, lrn, due = 0, 0, 0
     for tree in self.mw.col.sched.deckDueTree():
@@ -42,7 +52,7 @@ def renderStats(self, _old):
         lrn += tree[3]
         due += tree[2]
 
-    total = (CountTimesNew*new) + lrn + due
+    total        = (CountTimesNew*new) + lrn + due
     totalDisplay = new + lrn + due
 
     # Get studied cards
@@ -50,12 +60,16 @@ def renderStats(self, _old):
     query_time_param = (self.mw.col.sched.day_cutoff if anki_point_version > 49 else self.mw.col.sched.dayCutoff) - 86400
     cards, thetime = self.mw.col.db.first("""select count(), sum(time)/1000 from revlog where id > ?""", query_time_param * 1000)
 
-    cards = cards or 0
-    thetime = thetime or 0
+    cards           = cards or 0
+    thetime         = thetime or 0
 
-    speed = cards * 60 / max(1, thetime)
-    minutes = int(total / max(1, speed))
+    speed           = cards * 60 / max(1, thetime)
+    formatted_speed = "{:.01f}".format(speed)
+    txtCardsMin     = tr.statistics_cards_per_min(formatted_speed)
 
+    minutes         = int(total / max(1, speed))
+    txtMinutes      = tr.studying_minute(minutes).replace('.', '')
+    
     buf = generate_style() + """
         <div style='display:table;padding-top:1.5em;'>
             <div style='display:table-cell;'> 
@@ -68,12 +82,13 @@ def renderStats(self, _old):
                 &nbsp;{}:&nbsp;<b class='total-color'> {}</b>
             </div>
             <div style='display:table-cell;vertical-align:middle;padding-left:2em;'>
-                {}: <br> {:.01f} {}/{}
+                {}: <br> {}
                 <br><br>
                 {} {}
             </div>
         </div>
-    """.format(_old(self), _("New"), new, _("Learn"), lrn, _("To Review"), due, _("Due"), lrn+due, _("Total"), totalDisplay, _("Average"), speed, _("Cards"), _("Minutes").replace("s", ""), str(ngettext("%s minute.", "%s minutes.", minutes) % minutes).replace(".", ""), _("More").lower())
+    """.format(_old(self), txtNew, new, txtLrn, lrn, txtDue, due, txtLrnDue, lrn+due, txtTotal, totalDisplay, txtAverage, txtCardsMin, txtMinutes, txtMore)
+    # """.format(_old(self), _("New"), new, _("Learn"), lrn, _("To Review"), due, _("Due"), lrn+due, _("Total"), totalDisplay, _("Average"), speed, _("Cards"), _("Minutes").replace("s", ""), str(ngettext("%s minute.", "%s minutes.", minutes) % minutes).replace(".", ""), _("More").lower())
     
     return buf
 
