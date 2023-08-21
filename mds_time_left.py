@@ -75,11 +75,11 @@ def renderStats(self, _old):
             <div style='display:table-cell;'> 
                 {} 
                 <hr>
-                {}:&nbsp; <span class='new-color'> {}</span>
-                &nbsp;{}:&nbsp;<span class='learn-color'> {}</span>
-                &nbsp;{}:&nbsp;<span class='review-color'> {}</span>
-                <br>{}:&nbsp;<b class='totaldue-color'> {}</b>
-                &nbsp;{}:&nbsp;<b class='total-color'> {}</b>
+                &nbsp;{}:&nbsp; <b class='new-color'> {}</b>
+                &nbsp;{}:&nbsp; <b class='learn-color'> {}</b>
+                &nbsp;{}:&nbsp; <b class='review-color'> {}</b>
+                &nbsp;{}:&nbsp; <b class='totaldue-color'> {}</b>
+                &nbsp;{}:&nbsp; <b class='total-color'> {}</b>
             </div>
             <div style='display:table-cell;vertical-align:middle;padding-left:2em;'>
                 {}: <br> {}
