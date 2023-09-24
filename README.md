@@ -2,7 +2,7 @@
 
 <b>#### New Change:</b>
 
-<b>+ Minor visual adjustments (Tanks @Okosh50)</b>
+<b>- Bug with version 23.10</b>
 
 <b>#### About:</b>
 
@@ -51,7 +51,8 @@ All modern browsers support the following 140 color names (click on a color name
 <b> #### Change Log:</b>
 
 <ul>
-  <li>v2.1 - 2023-08-21 + Minor visual adjustments (Tanks @Okosh50)</li>
+  <li>v2.3 - 2023-09-24 - Bug with version 23.10</li>
+  <li>v2.2 - 2023-08-21 + Minor visual adjustments (Tanks @Okosh50)</li>
   <li>v2.1 - 2023-08-17 + Fully translated</li>
   <li>v2.0 - 2023-08-15 + New code (Clean)</li>
   <li>v1.9 - 2022-10-09 + dayCutoff deprecated (Tanks @khonkhortisan)</li>

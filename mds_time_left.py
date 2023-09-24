@@ -56,9 +56,10 @@ def renderStats(self, _old):
     totalDisplay = new + lrn + due
 
     # Get studied cards
-    anki_point_version = int(anki_version.split(".")[2])
-    query_time_param = (self.mw.col.sched.day_cutoff if anki_point_version > 49 else self.mw.col.sched.dayCutoff) - 86400
-    cards, thetime = self.mw.col.db.first("""select count(), sum(time)/1000 from revlog where id > ?""", query_time_param * 1000)
+    # anki_point_version = int(anki_version.split(".")[2])
+    # query_time_param = (self.mw.col.sched.day_cutoff if anki_point_version > 49 else self.mw.col.sched.dayCutoff) - 86400
+    query_time_param = self.mw.col.sched.day_cutoff - 86400
+    cards, thetime   = self.mw.col.db.first("""select count(), sum(time)/1000 from revlog where id > ?""", query_time_param * 1000)
 
     cards           = cards or 0
     thetime         = thetime or 0
