@@ -2,7 +2,7 @@
 
 <b>#### New Change:</b>
 
-<b>- Bug with version 23.10</b>
+<b>+ Added 'ShowTimeLeft' toggle for study time visibility</b>
 
 <b>#### About:</b>
 
@@ -36,6 +36,15 @@ You can now configure how many times new cards will be counted.
   <li>Quantify 'n' times the "new card" time | Example: Steps (1 10 10 20 30...) => n=5</li>
 </ul>
 
+<b>ShowTimeLeft [boolean]:</b>
+
+This setting allows you to toggle the display of the estimated time left for studying. Some users may find this information motivating, while others might prefer not to see it to reduce stress.
+
+<ul>
+  <li>ShowTimeLeft = true (default) | Display the time left to study.</li>
+  <li>ShowTimeLeft = false | Do not display the time left to study.</li>
+</ul>
+
 <b>Number colors [Name]:</b> <a href="https://www.w3schools.com/colors/colors_groups.asp">Color Names Sorted by Color Groups</a>
 
 All modern browsers support the following 140 color names (click on a color name, or a hex value, to view the color as the background-color along with different text colors):
@@ -51,6 +60,7 @@ All modern browsers support the following 140 color names (click on a color name
 <b> #### Change Log:</b>
 
 <ul>
+  <li>v2.4 - 2024-04-11 - Added 'ShowTimeLeft' toggle for study time visibility.</li>
   <li>v2.3 - 2023-09-24 - Bug with version 23.10</li>
   <li>v2.2 - 2023-08-21 + Minor visual adjustments (Tanks @Okosh50)</li>
   <li>v2.1 - 2023-08-17 + Fully translated</li>

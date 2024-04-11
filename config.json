@@ -9,5 +9,6 @@
 	"ReviewColorDark": "Orange",
 	"LearnColorDark": "Orange",
 	"TotalDueColorDark": "#00AA00",
-	"TotalColorDark": "Red"
+	"TotalColorDark": "Red",
+	"ShowTimeLeft": true
 }

@@ -70,7 +70,12 @@ def renderStats(self, _old):
 
     minutes         = int(total / max(1, speed))
     txtMinutes      = tr.studying_minute(minutes).replace('.', '')
-    
+
+    if config.get("ShowTimeLeft", True):
+        timeLeftDisplay = "{} {}".format(txtMinutes, txtMore)
+    else:
+        timeLeftDisplay = ""
+
     buf = generate_style() + """
         <div style='display:table;padding-top:1.5em;'>
             <div style='display:table-cell;'> 
@@ -85,10 +90,10 @@ def renderStats(self, _old):
             <div style='display:table-cell;vertical-align:middle;padding-left:2em;'>
                 {}: <br> {}
                 <br><br>
-                {} {}
+                {}
             </div>
         </div>
-    """.format(_old(self), txtNew, new, txtLrn, lrn, txtDue, due, txtLrnDue, lrn+due, txtTotal, totalDisplay, txtAverage, txtCardsMin, txtMinutes, txtMore)
+    """.format(_old(self), txtNew, new, txtLrn, lrn, txtDue, due, txtLrnDue, lrn+due, txtTotal, totalDisplay, txtAverage, txtCardsMin, timeLeftDisplay)
     # """.format(_old(self), _("New"), new, _("Learn"), lrn, _("To Review"), due, _("Due"), lrn+due, _("Total"), totalDisplay, _("Average"), speed, _("Cards"), _("Minutes").replace("s", ""), str(ngettext("%s minute.", "%s minutes.", minutes) % minutes).replace(".", ""), _("More").lower())
     
     return buf
