@@ -63,7 +63,6 @@ def renderStats(self, _old):
 
     cards           = cards or 0
     thetime         = thetime or 0
-
     speed           = cards * 60 / max(1, thetime)
     formatted_speed = "{:.01f}".format(speed)
     txtCardsMin     = tr.statistics_cards_per_min(formatted_speed)
