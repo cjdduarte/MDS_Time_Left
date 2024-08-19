@@ -1,5 +1,6 @@
 {
 	"CountTimesNew": 2,
+	"DaysToConsider": 0, 
 	"NewColorLight": "Blue",
 	"ReviewColorLight": "Red",
 	"LearnColorLight": "Red",

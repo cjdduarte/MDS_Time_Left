@@ -16,6 +16,7 @@ from aqt.utils import tr
 #-------------Configuration------------------
 config = mw.addonManager.getConfig(__name__)
 CountTimesNew = config['CountTimesNew']
+DaysToConsider = config['DaysToConsider']
 #-------------Configuration------------------
 
 def generate_style():
@@ -45,6 +46,12 @@ def renderStats(self, _old):
     txtAverage  = tr.statistics_average()
     txtMore     = tr.studying_more().lower()
 
+    txtDaysCount = tr.statistics_in_time_span_days(DaysToConsider)  # Usando uma tradução existente para 'days'
+    # txtToday = tr.statistics_today_title()
+
+    if DaysToConsider > 1:
+        txtAverage = f"{txtAverage} ({txtDaysCount})"
+
     # Get due and new cards
     new, lrn, due = 0, 0, 0
     for tree in self.mw.col.sched.deckDueTree():
@@ -58,7 +65,9 @@ def renderStats(self, _old):
     # Get studied cards
     # anki_point_version = int(anki_version.split(".")[2])
     # query_time_param = (self.mw.col.sched.day_cutoff if anki_point_version > 49 else self.mw.col.sched.dayCutoff) - 86400
-    query_time_param = self.mw.col.sched.day_cutoff - 86400
+    # query_time_param = self.mw.col.sched.day_cutoff - 86400
+    total_seconds = 86400 * (DaysToConsider)  # Calcula o total de segundos para os dias configurados
+    query_time_param = self.mw.col.sched.day_cutoff - total_seconds
     cards, thetime   = self.mw.col.db.first("""select count(), sum(time)/1000 from revlog where id > ?""", query_time_param * 1000)
 
     cards           = cards or 0

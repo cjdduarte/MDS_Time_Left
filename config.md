@@ -14,6 +14,17 @@ The default steps for "New" Anki cards are 1min and 10min, meaning that you see 
   Quantify 'n' times the "new card" time<br/>
   Example: Steps (1 10 10 20 30...)
 
+### DaysToConsider [number]
+This setting allows you to configure how many days of review data should be considered when calculating the estimated time left to study. By default, only the current day's data is used. 
+
+**Values:**<br/>
+- `"DaysToConsider" = 1` (default)<br/>
+  Consider only the current day's review data.<br/>
+- `"DaysToConsider" = 2`<br/>
+  Consider the current day and the previous day's review data.<br/>
+- `"DaysToConsider" = n`<br/>
+  Consider the current day and the previous n-1 days' review data.<br/>
+
 ### ShowTimeLeft [boolean]
 This setting allows you to control whether the estimated time left to study is displayed. Some users may find this information motivating, while others may find it stressful.
 

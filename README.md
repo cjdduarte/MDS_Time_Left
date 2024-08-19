@@ -2,7 +2,7 @@
 
 <b>#### New Change:</b>
 
-<b>+ Added 'ShowTimeLeft' toggle for study time visibility</b>
+<b>+ Added 'DaysToConsider' configuration for multi-day review statistics</b>
 
 <b>#### About:</b>
 
@@ -36,6 +36,16 @@ You can now configure how many times new cards will be counted.
   <li>Quantify 'n' times the "new card" time | Example: Steps (1 10 10 20 30...) => n=5</li>
 </ul>
 
+<b>DaysToConsider [number]:</b>
+
+This setting allows you to configure how many days of review data should be considered when calculating the estimated time left to study. By default, only the current day's data is used.
+
+<ul>
+  <li>DaysToConsider = 1 (default) | Consider only the current day's review data.</li>
+  <li>DaysToConsider = 2 | Consider the current day and the previous day's review data.</li>
+  <li>DaysToConsider = n | Consider the current day and the previous n-1 days' review data.</li>
+</ul>
+
 <b>ShowTimeLeft [boolean]:</b>
 
 This setting allows you to toggle the display of the estimated time left for studying. Some users may find this information motivating, while others might prefer not to see it to reduce stress.
@@ -60,6 +70,7 @@ All modern browsers support the following 140 color names (click on a color name
 <b> #### Change Log:</b>
 
 <ul>
+  <li>v2.5 - 2024-08-19 - Added 'DaysToConsider' configuration for multi-day review statistics.</li>
   <li>v2.4 - 2024-04-11 - Added 'ShowTimeLeft' toggle for study time visibility.</li>
   <li>v2.3 - 2023-09-24 - Bug with version 23.10</li>
   <li>v2.2 - 2023-08-21 + Minor visual adjustments (Tanks @Okosh50)</li>
