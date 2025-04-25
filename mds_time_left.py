@@ -80,7 +80,7 @@ def renderStats(self, _old):
     txtMinutes      = tr.studying_minute(minutes).replace('.', '')
 
     if config.get("ShowTimeLeft", True):
-        timeLeftDisplay = "{} {}".format(txtMinutes, txtMore)
+        timeLeftDisplay = f"{txtMinutes} {txtMore}"
     else:
         timeLeftDisplay = ""
 
