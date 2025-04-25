@@ -70,7 +70,7 @@ All modern browsers support the following 140 color names (click on a color name
 <b> #### Change Log:</b>
 
 <ul>
-  <li>v2.6 - 2024-03-21 - Tested compatibility with Anki 25.02.4</li>
+  <li>v2.6 - 2025-04-24 - Tested compatibility with Anki 25.02.4</li>
   <li>v2.5 - 2024-08-19 - Added 'DaysToConsider' configuration for multi-day review statistics.</li>
   <li>v2.4 - 2024-04-11 - Added 'ShowTimeLeft' toggle for study time visibility.</li>
   <li>v2.3 - 2023-09-24 - Bug with version 23.10</li>
