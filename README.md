@@ -2,7 +2,7 @@
 
 <b>#### New Change:</b>
 
-<b>+ Tested compatibility with Anki 25.02.4</b>
+<b>Downgrade to 2.6 (BugFix)</b>
 
 <b>#### About:</b>
 
@@ -70,6 +70,9 @@ All modern browsers support the following 140 color names (click on a color name
 <b> #### Change Log:</b>
 
 <ul>
+
+  <li>v2.8 - 2025-05-22 - Downgrade to 2.6 (BugFix)</li>
+  <li>v2.7 - 2025-05-21 - Fixed compatibility with Anki 25.02.5 (using `deck_due_tree`) and resolved potential conflict during Anki closing/profile switching.</li>
   <li>v2.6 - 2025-04-24 - Tested compatibility with Anki 25.02.4</li>
   <li>v2.5 - 2024-08-19 - Added 'DaysToConsider' configuration for multi-day review statistics.</li>
   <li>v2.4 - 2024-04-11 - Added 'ShowTimeLeft' toggle for study time visibility.</li>
