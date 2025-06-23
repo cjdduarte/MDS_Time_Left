@@ -54,10 +54,21 @@ def renderStats(self, _old):
 
     # Get due and new cards
     new, lrn, due = 0, 0, 0
-    for tree in self.mw.col.sched.deckDueTree():
-        new += tree[4]
-        lrn += tree[3]
-        due += tree[2]
+    
+    try:
+        # Nova API (Anki 2.1.50+)
+        root_node = self.mw.col.sched.deck_due_tree()
+        if root_node:
+            new = root_node.new_count
+            lrn = root_node.learn_count
+            due = root_node.review_count
+    except AttributeError:
+        # API antiga (Anki < 2.1.50) - fallback
+        print("Using deprecated API")
+        for tree in self.mw.col.sched.deckDueTree():
+            new += tree[4]
+            lrn += tree[3]
+            due += tree[2]
 
     total        = (CountTimesNew*new) + lrn + due
     totalDisplay = new + lrn + due

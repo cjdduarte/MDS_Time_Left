@@ -2,7 +2,7 @@
 
 <b>#### New Change:</b>
 
-<b>Downgrade to 2.6 (BugFix)</b>
+<b>Fix deprecated API usage</b>
 
 <b>#### About:</b>
 
@@ -71,6 +71,7 @@ All modern browsers support the following 140 color names (click on a color name
 
 <ul>
 
+  <li>v2.9 - 2025-06-23 - Fix deprecated API usage</li>
   <li>v2.8 - 2025-05-22 - Downgrade to 2.6 (BugFix)</li>
   <li>v2.7 - 2025-05-21 - Fixed compatibility with Anki 25.02.5 (using `deck_due_tree`) and resolved potential conflict during Anki closing/profile switching.</li>
   <li>v2.6 - 2025-04-24 - Tested compatibility with Anki 25.02.4</li>
